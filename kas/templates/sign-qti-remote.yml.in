@@ -1,0 +1,14 @@
+# Copy to kas/local/sign.yml to QTI sign TF-A BL2 (tz.mbn) in the build
+# instead of after it (docs/signing.md). Needs a sectools build with the
+# QTI-REMOTE mode and access to a Qualcomm signing service; the service
+# options are site specific and never belong in this repository.
+header:
+  version: 14
+
+local_conf_header:
+  eliza-sign: |
+    QCOM_FIRMWARE_SIGN_ENABLE:pn-trusted-firmware-a-qcom-eliza = "1"
+    QCOM_FIRMWARE_SIGN_MODE:pn-trusted-firmware-a-qcom-eliza = "QTI-REMOTE"
+    QCOM_FIRMWARE_SIGN_SECTOOLS = "@SECTOOLS@"
+    QCOM_FIRMWARE_SIGN_SECPROFILE_DIR = "@SECPROFILE_DIR@"
+    QCOM_FIRMWARE_SIGN_QTI_REMOTE_ARGS = "@QTI_REMOTE_ARGS@"

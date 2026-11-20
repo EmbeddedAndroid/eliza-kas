@@ -1,0 +1,8 @@
+# Written by tools/new-fp.sh: the build fingerprint of this build. Never
+# reuse one; every build gets the next number.
+header:
+  version: 14
+
+local_conf_header:
+  eliza-fp: |
+    QCDFP = "@QCDFP@"

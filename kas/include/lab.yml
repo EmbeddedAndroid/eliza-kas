@@ -1,0 +1,31 @@
+# Lab configuration of the Eliza EVK images: the lab layer (build
+# fingerprint in every firmware component, the kernel release and
+# /etc/qcdfp; U-Boot eMMC diagnostic), the tools the test suites run on the
+# board, and room in the rootfs for the LAVA overlays. The fingerprint
+# itself comes from kas/local/fp.yml (tools/new-fp.sh writes it).
+header:
+  version: 14
+
+repos:
+  eliza-kas:
+    layers:
+      meta-eliza-lab:
+
+local_conf_header:
+  eliza-lab: |
+    INHERIT += "qcdfp"
+    KERNEL_LOCALVERSION:append:pn-linux-qcom-eliza = "-${QCDFP}"
+    EXTRA_OEMAKE:append:pn-trusted-firmware-a-qcom-eliza = " BUILD_STRING=${QCDFP}"
+    EXTRA_OEMAKE:append:pn-optee-os-qcom-eliza = " TEE_IMPL_VERSION=${QCDFP}"
+    UBOOT_LOCALVERSION:pn-u-boot-qcom = "-${QCDFP}"
+    IMAGE_INSTALL:append = " eliza-lab-msm-gpu"
+    # BL2 is QTI signed after the build (docs/signing.md); kas/templates/
+    # sign-qti-remote.yml signs it in the build instead.
+    QCOM_FIRMWARE_SIGN_ENABLE:pn-trusted-firmware-a-qcom-eliza ?= "0"
+    RM_WORK_EXCLUDE += "linux-qcom-eliza iris-video-dlkm trusted-firmware-a-qcom-eliza"
+  # kas applies local_conf_header keys in sorted order: zz- must come after
+  # the distro sections that set IMAGE_ROOTFS_EXTRA_SPACE.
+  zz-eliza-lab-suite: |
+    LICENSE_FLAGS_ACCEPTED:append = " commercial"
+    IMAGE_INSTALL:append = " alsa-utils lame tinycompress bash clinfo coreutils ffmpeg kvmtool socat stress-ng unzip util-linux"
+    IMAGE_ROOTFS_EXTRA_SPACE = "4194304"

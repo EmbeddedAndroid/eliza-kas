@@ -1,0 +1,12 @@
+# Copy to kas/local/builder.yml to size the build to the machine. Does not
+# change the output.
+header:
+  version: 14
+
+local_conf_header:
+  eliza-builder: |
+    BB_NUMBER_THREADS = "5"
+    PARALLEL_MAKE = "-j 8"
+    PARALLEL_MAKE:pn-llvm = "-j 6"
+    PARALLEL_MAKE:pn-clang = "-j 6"
+    PARALLEL_MAKE:pn-clang-native = "-j 6"

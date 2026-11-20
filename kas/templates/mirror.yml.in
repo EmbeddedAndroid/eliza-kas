@@ -1,0 +1,14 @@
+# Copy to kas/local/mirror.yml and set MIRROR_URL to a builder-local source
+# mirror (a DL_DIR served over https or a file:// path). Bitbake tries it
+# before the upstream URLs; the sha256 and SRCREV checks still apply.
+header:
+  version: 14
+
+local_conf_header:
+  eliza-mirror: |
+    PREMIRRORS:prepend = " \
+        git://.*/.* @MIRROR_URL@/ \
+        gitsm://.*/.* @MIRROR_URL@/ \
+        https?://.*/.* @MIRROR_URL@/ \
+    "
+    BB_FETCH_PREMIRRORONLY ?= "0"

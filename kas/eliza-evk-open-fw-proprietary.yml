@@ -1,0 +1,12 @@
+# Config #2: qcom-multimedia-proprietary-image for eliza-evk-emmc-open-fw:
+# config #1 plus the Qualcomm proprietary userspace (kgsl + Adreno GLES,
+# camx, QAIRT, fastcv). The binaries are fetched by the meta-qcom recipes
+# and checked against the sha256 each recipe carries (docs/binaries.md);
+# a builder-local mirror goes in kas/local/mirror.yml.
+header:
+  version: 14
+  includes:
+    - kas/eliza-evk-open-fw-multimedia.yml
+
+target:
+  - qcom-multimedia-proprietary-image

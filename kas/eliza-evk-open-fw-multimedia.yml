@@ -1,0 +1,17 @@
+# Config #1: qcom-multimedia-image for eliza-evk-emmc-open-fw (TF-A, OP-TEE
+# and U-Boot from source, open GPU stack: drm/msm + Mesa freedreno).
+#   tools/new-fp.sh QCDFP-YYMMDD-NNNN
+#   kas-container build kas/eliza-evk-open-fw-multimedia.yml:kas/local/fp.yml
+header:
+  version: 14
+  includes:
+    - repo: meta-qcom
+      file: ci/eliza-evk-emmc-open-fw.yml
+    - repo: meta-qcom
+      file: ci/qcom-distro-multimedia-image.yml
+    - kas/include/pins.yml
+    - kas/include/lab.yml
+
+repos:
+  meta-qcom:
+    url: https://github.com/EmbeddedAndroid/meta-qcom.git

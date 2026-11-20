@@ -1,0 +1,38 @@
+# Every repository of the Eliza EVK images, pinned to the commit the
+# images are built from. meta-qcom is the EmbeddedAndroid fork branch; the
+# rest match meta-qcom's ci/base.lock.yml plus meta-qcom-distro, which that
+# lock does not cover. The branch names only let kas check that each commit
+# is on the branch it fetched.
+header:
+  version: 14
+
+repos:
+  meta-qcom:
+    url: https://github.com/EmbeddedAndroid/meta-qcom.git
+    branch: eliza/repro
+    commit: 1e0d7cc7abed4eda479984969a146e6bf5df1631
+
+overrides:
+  repos:
+    bitbake:
+      commit: 89802bd702d80d6116c47bf44ec876568f71e8dd
+    meta-ai:
+      commit: ec488d7f302c0bccd4a903c0963e9794f4409592
+    meta-arm:
+      commit: 854b732c4a09a7c004a962ebb94da520a510e8b9
+    meta-audioreach:
+      commit: a43b2ad6f731041602302e890da2b8a1d02cd686
+    meta-openembedded:
+      commit: 33db795031ddef81949db64aedf33070e1330fdd
+    meta-qcom-distro:
+      commit: 3bcf28708c932022dad4858502ceb78a5c0dc43c
+    meta-security:
+      commit: 1b3d7d6a49be21fa12b7a64fa343f399c8a9a1a5
+    meta-selinux:
+      commit: 4f812945311e706a7a096863b81243738829c9a7
+    meta-updater:
+      commit: 2421cb841e648ef26564d9a2131a0016adc56cbd
+    meta-virtualization:
+      commit: 89b00d096a432000766729cd721ae647af500112
+    oe-core:
+      commit: c2ea9568b768de7c479aba22f15520793a7dace4
