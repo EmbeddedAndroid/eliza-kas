@@ -1,8 +1,9 @@
 # Lab configuration of the Eliza EVK images: the lab layer (build
 # fingerprint in every firmware component, the kernel release and
 # /etc/qcdfp; U-Boot eMMC diagnostic), the tools the test suites run on the
-# board, and room in the rootfs for the LAVA overlays. The fingerprint
-# itself comes from kas/local/fp.yml (tools/new-fp.sh writes it).
+# board, and room in the rootfs for the LAVA overlays (config #2 drops
+# eliza-lab-msm-gpu again). The fingerprint itself comes from
+# kas/local/fp.yml (tools/new-fp.sh writes it).
 header:
   version: 14
 

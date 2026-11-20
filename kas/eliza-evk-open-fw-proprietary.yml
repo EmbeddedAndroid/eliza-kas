@@ -1,8 +1,9 @@
 # Config #2: qcom-multimedia-proprietary-image for eliza-evk-emmc-open-fw:
 # config #1 plus the Qualcomm proprietary userspace (kgsl + Adreno GLES,
-# camx, QAIRT, fastcv). The binaries are fetched by the meta-qcom recipes
-# and checked against the sha256 each recipe carries (docs/binaries.md);
-# a builder-local mirror goes in kas/local/mirror.yml.
+# camx, QAIRT, fastcv), without the lab's separate msm GPU device. The
+# binaries are fetched by the meta-qcom recipes and checked against the
+# sha256 each recipe carries (docs/binaries.md); a builder-local mirror
+# goes in kas/local/mirror.yml.
 header:
   version: 14
   includes:
@@ -10,3 +11,9 @@ header:
 
 target:
   - qcom-multimedia-proprietary-image
+
+local_conf_header:
+  eliza-lab-proprietary: |
+    # qcom-adreno loads msm with skip_gpu=1 for display only; a separate
+    # GPU KMS device would leave no render node for the Adreno EGL
+    IMAGE_INSTALL:remove = "eliza-lab-msm-gpu"

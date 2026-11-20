@@ -6,7 +6,7 @@ firmware from public sources, every repository pinned to a commit:
 | | kas file | image |
 |---|---|---|
 | config #1 | `kas/eliza-evk-open-fw-multimedia.yml` | qcom-multimedia-image: TF-A, OP-TEE, U-Boot and the kernel from source, open GPU stack (drm/msm, Mesa freedreno) |
-| config #2 | `kas/eliza-evk-open-fw-proprietary.yml` | qcom-multimedia-proprietary-image: config #1 plus the Qualcomm proprietary userspace (kgsl and Adreno GLES, camx, QAIRT, fastcv) |
+| config #2 | `kas/eliza-evk-open-fw-proprietary.yml` | qcom-multimedia-proprietary-image: config #1 plus the Qualcomm proprietary userspace (kgsl and Adreno GLES, camx, QAIRT, fastcv), without the lab's separate msm GPU device |
 
 The board support is in the EmbeddedAndroid meta-qcom fork, branch
 `eliza/repro` (machine `eliza-evk-emmc-open-fw`, kernel recipe
