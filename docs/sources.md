@@ -29,14 +29,17 @@ topology sync (PR 3578), the Eliza open boot firmware machine and recipes
 eliza, then the Eliza EVK commits: U-Boot fastboot fixes, the
 linux-qcom-eliza kernel, the machine switch to it, iris_vpu Eliza support,
 the AudioReach Eliza sound card, the PAL raw stream, kvmtool ARCH,
-tee-supplicant storage, kgsl on open boot firmware.
+tee-supplicant storage, kgsl on open boot firmware, SuperSpeed fastboot,
+fastboot getvar platform and unlocked, the kernel update to the OV9282
+series and the IMX577 + OV9282 composite in the UKI.
 
 ## Kernel
 linux-qcom-eliza builds github.com/EmbeddedAndroid/linux eliza/integration
 (SRCREV in recipes-kernel/linux/linux-qcom-eliza_git.bb): qcom-next
 qcom-next-7.3-20261031 (17bbb4b37bbc) with the meta-qcom linux-qcom-next
-fixes, the Eliza EVK boot series, native HDMI, CAMSS/IMX577 camera and the
-q6apm audio fixes. Config: the tree's defconfig, hardening.config,
+fixes, the Eliza EVK boot series, native HDMI, CAMSS with the IMX577
+(CAM0) and OV9282 (CAM1) cameras and the q6apm audio fixes. The UKI
+carries the eMMC EL2 IMX577 + OV9282 composite DTB. Config: the tree's defconfig, hardening.config,
 prune.config and qcom.config, meta-qcom bsp-additions.cfg and
 no-smccc-soc-id.cfg.
 
@@ -45,7 +48,7 @@ no-smccc-soc-id.cfg.
 |---|---|
 | TF-A BL2 + BL31 | github.com/EmbeddedAndroid/arm-trusted-firmware qcom/eliza-next a3ab19a9db87a7824092dd60b1789fa17772b4a8 |
 | OP-TEE + TAs | github.com/EmbeddedAndroid/optee_os qcom/eliza-next 7a8e0bb1a05ac9b0172907d977981a8cf65f32d1 |
-| U-Boot | github.com/qualcomm-linux/u-boot 0766fef311064ef58a78282fd92c1eed74aa494b + meta-qcom patches 0001-0015 |
+| U-Boot | github.com/qualcomm-linux/u-boot 0766fef311064ef58a78282fd92c1eed74aa494b + meta-qcom patches 0001-0024 |
 | XBL and the other boot binaries | firmware-qcom-boot-eliza 00014 (docs/binaries.md) |
 | CDT | firmware-qcom-cdt-eliza cq7790-evk_v1 (docs/binaries.md) |
 

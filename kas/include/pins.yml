@@ -10,7 +10,7 @@ repos:
   meta-qcom:
     url: https://github.com/EmbeddedAndroid/meta-qcom.git
     branch: eliza/repro
-    commit: 1e0d7cc7abed4eda479984969a146e6bf5df1631
+    commit: 85842643df0d225b7dc390980ebc06b1c3220717
 
 overrides:
   repos:
