@@ -31,7 +31,7 @@ Root CA". Then put it into the flashable tarball:
 
     tools/pkg-signed.sh \
         build/tmp/deploy/images/eliza-evk-emmc-open-fw/qcom-multimedia-image-eliza-evk-emmc-open-fw.rootfs.qcomflash.tar.gz \
-        tz.mbn QCDFP-YYMMDD-NNNN qcom-multimedia-image-QCDFP-YYMMDD-NNNN-signed.qcomflash.tar.gz
+        tz.mbn QCDFP-YYMMDD-N qcom-multimedia-image-QCDFP-YYMMDD-N-signed.qcomflash.tar.gz
 
 To sign inside the build instead, copy `kas/templates/sign-qti-remote.yml.in`
 to `kas/local/sign.yml`, fill in the sectools path, the profile directory

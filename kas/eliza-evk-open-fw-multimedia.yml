@@ -1,6 +1,6 @@
 # Config #1: qcom-multimedia-image for eliza-evk-emmc-open-fw (TF-A, OP-TEE
 # and U-Boot from source, open GPU stack: drm/msm + Mesa freedreno).
-#   tools/new-fp.sh QCDFP-YYMMDD-NNNN
+#   tools/new-fp.sh QCDFP-YYMMDD-N
 #   kas-container build kas/eliza-evk-open-fw-multimedia.yml:kas/local/fp.yml
 header:
   version: 14

@@ -30,7 +30,7 @@ its sstate. The toolchain is the kas 5.5 container.
     mkdir -p "$DL_DIR" "$SSTATE_DIR"
 
     # every build gets a new fingerprint
-    tools/new-fp.sh QCDFP-YYMMDD-NNNN
+    tools/new-fp.sh QCDFP-YYMMDD-N
 
     # config #1
     ./kas-container build kas/eliza-evk-open-fw-multimedia.yml:kas/local/fp.yml
