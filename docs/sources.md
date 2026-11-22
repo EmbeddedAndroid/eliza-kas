@@ -54,8 +54,9 @@ no-smccc-soc-id.cfg.
 
 BL2 must be QTI signed after the build: docs/signing.md.
 
-## Known source gap
+## Replaced source
 github.com/microsoft/onnxruntime (onnxruntime in both images, meta-ai
 SRCREV_ort 8c546c37b43caaca1fa25db430dab94b901cf277) no longer answers;
-fetch it from a mirror set in kas/local/mirror.yml until a public mirror
-is pinned here.
+kas/include/pins.yml maps it to github.com/ROCm/onnxruntime, whose
+rel-1.26.0 branch carries that commit. The fetch checks the commit is
+on that branch, so a rewrite of the fork branch breaks it.

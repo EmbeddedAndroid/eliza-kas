@@ -60,16 +60,15 @@ of trust. The build leaves it unsigned; sign it and swap it into the
 tarball as described in `docs/signing.md` (`tools/pkg-signed.sh`). This is
 the only step that needs non-public tools.
 
-## Prebuilt inputs and gaps
+## Prebuilt inputs and replaced sources
 
 Every prebuilt binary is fetched by the pinned recipes and checked against
 its sha256: `docs/binaries.md`. Neither config needs a private fetch
 location or a credential.
 
-Known gap: github.com/microsoft/onnxruntime, which both images build, no
-longer answers. Until a public mirror is pinned here, point
-`kas/local/mirror.yml` at a mirror that holds meta-ai's onnxruntime
-revision.
+github.com/microsoft/onnxruntime, which both images build, no longer
+answers; `kas/include/pins.yml` fetches meta-ai's onnxruntime revision from
+the ROCm fork (github.com/ROCm/onnxruntime) instead.
 
 ## Checking a build
 

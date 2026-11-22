@@ -36,3 +36,11 @@ overrides:
       commit: 89b00d096a432000766729cd721ae647af500112
     oe-core:
       commit: c2ea9568b768de7c479aba22f15520793a7dace4
+
+# github.com/microsoft/onnxruntime no longer answers; the ROCm fork carries
+# meta-ai's onnxruntime revision (SRCREV_ort) on the same branch.
+local_conf_header:
+  eliza-onnxruntime: |
+    PREMIRRORS:prepend = " \
+        gitsm://github.com/microsoft/onnxruntime.git gitsm://github.com/ROCm/onnxruntime.git;protocol=https \
+    "
