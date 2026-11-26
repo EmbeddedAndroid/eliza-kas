@@ -28,5 +28,5 @@ local_conf_header:
   # the distro sections that set IMAGE_ROOTFS_EXTRA_SPACE.
   zz-eliza-lab-suite: |
     LICENSE_FLAGS_ACCEPTED:append = " commercial"
-    IMAGE_INSTALL:append = " alsa-utils lame tinycompress bash clinfo coreutils ffmpeg kvmtool socat stress-ng unzip util-linux"
+    IMAGE_INSTALL:append = " alsa-utils lame tinycompress bash clinfo coreutils ffmpeg i2c-tools kvmtool socat stress-ng unzip util-linux"
     IMAGE_ROOTFS_EXTRA_SPACE = "4194304"
